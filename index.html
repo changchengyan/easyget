@@ -1,0 +1,1896 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>易得调研</title>
+		<link rel="stylesheet" href="css/commen.css" />
+		<link rel="shortcut icon" href="images/favicon.ico">
+		<script src="script/jquery-1.10.2.min.js"></script>
+		<style>
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+			}
+			
+			body {
+				min-width: 1200px;
+				color: #333;
+				font-family: "微软雅黑";
+				position: relative;
+			}
+			
+			.index-top {
+				position: fixed;
+				top: 0;
+				width: 100%;
+				height: 100px;
+				margin: 0 auto;
+				background: #fff;
+				z-index: 1000;
+				left: 0;
+				right: 0;
+				border-bottom: 1px solid #ccc;
+			}
+			
+			.top-logo {
+				display: inline-block;
+				width: 269px;
+				height: 62px;
+				background: url(images/logo_beta.png) no-repeat 14px center;
+				background-size: contain;
+				margin-top: 18px;
+			}
+			
+			.index-nav {
+				height: 100%;
+			}
+			
+			.index-nav a {
+				display: inline-block;
+				height: 100%;
+				padding: 40px 20px 0;
+				box-sizing: border-box;
+			}
+			
+			.index-nav span {
+				display: inline-block;
+				padding: 0 20px 6px;
+				color: #333;
+				font-size: 18px;
+				font-family: "微软雅黑";
+				border-bottom: 2px solid #fff;
+			}
+			
+			a.selected-span span {
+				border-bottom: 2px solid #1faae2;
+				color: #1faae2;
+				transition: all 1s;
+			}
+			
+			.index-banner {
+				width: 100%;
+				min-width: 1200px;
+				height: 500px;
+				background: url(images/banner.jpg) no-repeat center center;
+			}
+			
+			.worry-content {
+				width: 1200px;
+				margin: 70px auto 0;
+			}
+			
+			.worry-content .title {
+				display: block;
+				width: 410px;
+				height: 60px;
+				margin: 0 auto;
+				line-height: 60px;
+				border-bottom: 1px solid #1faae2;
+				text-align: center;
+				font-size: 32px;
+			}
+			
+			.worry-content .item {
+				width: 33%;
+				margin: 50px 0;
+			}
+			
+			.worry-content .worry-img {
+				display: inline-block;
+				width: 100%;
+				height: 180px;
+			}
+			
+			.worry-content div:nth-of-type(1) .worry-img {
+				background: url("images/scene1.png") no-repeat center;
+				transition: all 1s;
+			}
+			
+			.worry-content div:nth-of-type(1) .worry-img:hover {
+				background: url("images/scene11.png") no-repeat center;
+			}
+			
+			.worry-content div:nth-of-type(2) .worry-img {
+				background: url("images/scene2.png") no-repeat center;
+				padding: 0 30px;
+				transition: all 1s;
+			}
+			
+			.worry-content div:nth-of-type(2) .worry-img:hover {
+				background: url("images/scene22.png") no-repeat center;
+			}
+			
+			.worry-content div:nth-of-type(3) .worry-img {
+				background: url("images/scene3.png") no-repeat center;
+				transition: all 1s;
+			}
+			
+			.worry-content div:nth-of-type(3) .worry-img:hover {
+				background: url("images/scene33.png") no-repeat center;
+			}
+			
+			.worry-content p {
+				font-size: 20px;
+				color: #666;
+				line-height: 34px;
+				text-align: center;
+			}
+			
+			.blue-title {
+				width: 100%;
+				height: 80px;
+				margin: 0px 0 70px;
+				padding: 0;
+				text-align: center;
+				font-size: 32px;
+				color: #fff;
+				line-height: 80px;
+				font-weight: normal;
+				background-color: #1faae2;
+				min-width: 1200px;
+			}
+			
+			.a-position {
+				width: 100%;
+				height: 100px;
+			}
+			
+			.min-width {
+				width: 1200px;
+				height: 100%;
+				margin: 0 auto;
+			}
+			
+			.solution-item {
+				width: 100%;
+				height: 410px;
+			}
+			
+			.solution-item:nth-of-type(odd) {
+				background-color: #f8f8f8;
+			}
+			
+			.solution-item .item-img {
+				width: 50%;
+				height: 100%;
+				vertical-align: middle;
+				cursor: pointer;
+				transition: all 1s;
+			}
+			
+			.solution-item p {
+				width: 50%;
+				margin-top: 10%;
+				font-size: 24px;
+				color: #666;
+				line-height: 40px;
+				vertical-align: text-top;
+			}
+			
+			.solution-one {
+				background: url(images/solution1.png) no-repeat center center;
+			}
+			
+			.solution-two {
+				background: url(images/solution2.png) no-repeat center 100%;
+				padding-top: 450px;
+			}
+			
+			.solution-three {
+				background: url(images/solution3.png) no-repeat center center;
+			}
+			
+			.solution-four {
+				background: url(images/solution4.png) no-repeat center center;
+			}
+			
+			.solution-five {
+				background: url(images/solution5.png) no-repeat center center;
+			}
+			
+			.solution-item .item-img:hover {
+				transform: translate3d(0, -20px, 0);
+			}
+			
+			.importent-word {
+				color: #1faae2;
+				font-size: 30px;
+			}
+			
+			.light-blue-title {
+				width: 100%;
+				height: 60px;
+				line-height: 60px;
+				font-size: 24px;
+				text-align: center;
+				font-weight: normal;
+				background: #f1fafe;
+			}
+			
+			.sight-show {
+				margin-top: 40px;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+			}
+			
+			.sight-box,
+			.data-box {
+				padding: 60px 0px 0;
+				position: relative;
+			}
+			
+			.sight-item {
+				text-align: center;
+				width: 25%;
+				height: 230px;
+				font-size: 0;
+				cursor: pointer;
+			}
+			
+			.sight-item:hover .survey-img {
+				opacity: 0.6;
+			}
+			
+			.survey-img {
+				display: inline-block;
+				width: 88px;
+				height: 88px;
+				background: url(images/solution_icon.png) no-repeat;
+				transition: all 1s;
+			}
+			
+			.survey-one {
+				background-position: 0 0;
+			}
+			
+			.survey-two {
+				background-position: 0 -320px;
+			}
+			
+			.survey-three {
+				background-position: 0 -480px;
+			}
+			
+			.survey-four {
+				background-position: 0 -640px;
+			}
+			
+			.survey-five {
+				background-position: 0 -800px;
+			}
+			
+			.survey-six {
+				background-position: 0 -160px;
+			}
+			
+			.sight-item p {
+				font-size: 16px;
+				line-height: 24px;
+			}
+			
+			.sight-item:hover p {
+				color: #1faae2;
+				transition: all 1s;
+			}
+			
+			.sight-show .line-circle:nth-of-type(1) {
+				position: absolute;
+				font-size: 0;
+				left: 20%;
+				top: 20%;
+			}
+			
+			.sight-show .line-circle:nth-of-type(2) {
+				position: absolute;
+				font-size: 0;
+				left: 45%;
+				top: 20%;
+			}
+			
+			.sight-show .line-circle:nth-of-type(3) {
+				position: absolute;
+				font-size: 0;
+				left: 70%;
+				top: 20%;
+			}
+			
+			.sight-show .line-circle:nth-of-type(4) {
+				position: absolute;
+				font-size: 0;
+				left: 20%;
+				top: 60%;
+			}
+			
+			.sight-show .line-circle:nth-of-type(5) {
+				position: absolute;
+				font-size: 0;
+				left: 11%;
+				top: 44%;
+				transform: rotate(90deg);
+			}
+			
+			.sight-show .line-circle:nth-of-type(6) {
+				position: absolute;
+				font-size: 0;
+				left: 35.5%;
+				top: 48%;
+				transform: rotate(270deg);
+			}
+			
+			.sight-show .line-circle:nth-of-type(5) .icon-line,
+			.sight-show .line-circle:nth-of-type(6) .icon-line {
+				display: inline-block;
+				width: 30px;
+				height: 1px;
+				background: #b0eaf0;
+			}
+			
+			.color-1faae2 {
+				background: #1faae2;
+			}
+			
+			.color-b0eaf0 {
+				background: #b0eaf0;
+			}
+			
+			.icon-line {
+				display: inline-block;
+				width: 100px;
+				height: 1px;
+			}
+			
+			.icon-circle {
+				display: inline-block;
+				width: 10px;
+				height: 10px;
+				border-radius: 100%;
+				vertical-align: middle;
+			}
+			
+			.sight-item-data {
+				text-align: center;
+				width: 20%;
+				height: 230px;
+				font-size: 0;
+				cursor: pointer;
+			}
+			
+			.data-img {
+				display: inline-block;
+				width: 100px;
+				height: 100px;
+				background: url(images/dataicon.png) no-repeat;
+				transition: all 1s;
+			}
+			
+			.sight-item-data:hover .data-img {
+				opacity: 0.6;
+			}
+			
+			.data-one {
+				background-position: 0 0px;
+			}
+			
+			.data-two {
+				background-position: 0 -148px;
+			}
+			
+			.data-three {
+				background-position: 0 -299px;
+			}
+			
+			.data-four {
+				background-position: 0 -449px;
+			}
+			
+			.data-five {
+				background-position: 0 -600px;
+			}
+			
+			.sight-item-data p {
+				font-size: 16px;
+				transtion: all 1s;
+			}
+			
+			.sight-item-data:hover p {
+				color: #1faae2;
+			}
+			
+			.data-box .line-circle:nth-of-type(1) {
+				position: absolute;
+				font-size: 0;
+				left: 15%;
+				top: 32%;
+			}
+			
+			.data-box .line-circle:nth-of-type(2) {
+				position: absolute;
+				font-size: 0;
+				left: 35%;
+				top: 32%;
+			}
+			
+			.data-box .line-circle:nth-of-type(3) {
+				position: absolute;
+				font-size: 0;
+				left: 55%;
+				top: 32%;
+			}
+			
+			.data-box .line-circle:nth-of-type(4) {
+				position: absolute;
+				font-size: 0;
+				left: 75%;
+				top: 32%;
+			}
+			
+			.service-list {
+				display: block;
+				list-style: none;
+				margin-bottom: 0px;
+			}
+			
+			.service-list li {
+				float: left;
+				width: 33%;
+				margin-top: 20px;
+				margin-bottom: 10px;
+			}
+			
+			.service-item {
+				margin: 0 30px;
+				text-align: center;
+				box-shadow: 0px 1px 5px #e7f0f4;
+				border-radius: 4px;
+				border: 1px solid #fff;
+				transition: all 0.5s;
+				cursor: pointer;
+			}
+			
+			.service-item:hover {
+				border: 1px solid #1faae2;
+			}
+			
+			.service-img {
+				display: inline-block;
+				width: 100%;
+				height: 165px;
+				border-top-left-radius: 4px;
+				border-top-right-radius: 4px;
+			}
+			
+			.service-list li:nth-of-type(1) .service-img {
+				background: url(images/service1.png) no-repeat center;
+			}
+			
+			.service-list li:nth-of-type(2) .service-img {
+				background: url(images/service2.png) no-repeat center;
+			}
+			
+			.service-list li:nth-of-type(3) .service-img {
+				background: url(images/service3.png) no-repeat center;
+			}
+			
+			.service-list li:nth-of-type(4) .service-img {
+				background: url(images/service4.png) no-repeat center;
+			}
+			
+			.service-list li:nth-of-type(5) .service-img {
+				background: url(images/service5.png) no-repeat center;
+			}
+			
+			.service-list li:nth-of-type(6) .service-img {
+				background: url(images/service6.png) no-repeat center;
+			}
+			
+			.service-word {
+				width: 100%;
+				height: 80px;
+				line-height: 80px;
+				color: #1faae2;
+			}
+			
+			.back-top {
+				display: none;
+				position: fixed;
+				right: 20px;
+				bottom: 300px;
+				width: 60px;
+				height: 60px;
+				cursor: pointer;
+				transition: all 0.5s;
+				background: url(images/back_top.png) no-repeat center;
+			}
+			
+			.back-top:hover {
+				background: url(images/hover.png) no-repeat center;
+			}
+			
+			#boxFive {
+				margin-bottom: 100px;
+			}
+			
+			#boxFive .write-title {
+				font-family: '微软雅黑';
+				font-size: 24px;
+				color: #666666;
+				text-align: center;
+				margin: 100px 0 50px 0;
+			}
+			
+			#boxFive .sevrceMode {
+				width: 1120px;
+				margin: 0 auto;
+				display: flex;
+				justify-content: space-between;
+				text-align: center;
+			}
+			
+			#boxFive .sevrceMode li {
+				margin-bottom: 100px;
+				text-align: center;
+				color: #1faae2;
+				position: relative;
+			}
+			
+			#boxFive .sevrceMode li dl {
+				width: 120px;
+				height: 118px;
+				margin: 0 auto;
+			}
+			
+			#boxFive .sevrceMode li dd {
+				width: 100px;
+				height: 100px;
+				border-radius: 50%;
+				text-align: center;
+				line-height: 100px;
+				transition: all 2s ease;
+			}
+			
+			#boxFive .sevrceMode li dd img {
+				vertical-align: middle;
+			}
+			
+			#boxFive .sevrceMode li span {
+				display: block;
+				text-align: center;
+				line-height: 100px;
+				font-weight: bolder;
+			}
+			
+			#boxFive .sevrceMode li dt {
+				width: 120px;
+				height: 18px;
+				font-size: 18px;
+				line-height: 24px;
+				font-family: "微软雅黑";
+				text-align: center;
+				color: #333;
+				position: absolute;
+				left: -10px;
+				top: 90px;
+				transition: all 2s ease;
+			}
+			
+			#boxFive .sevrceMode li:hover dd {
+				background-color: #eef7fe;
+			}
+			
+			#boxFive .sevrceMode li:hover dt {
+				left: -10px;
+				top: 110px;
+			}
+			
+			.newsPic {
+				width: 100%;
+				height: 301px;
+				background: url("./images/meet.jpg") no-repeat center center;
+				background-size: 100% 100%;
+				overflow: hidden
+			}
+			
+			.newsPic .container {
+				width: 100%;
+				height: 100%;
+				background-color: #5892cb;
+				opacity: 0.7;
+				transition: all 2s ease;
+			}
+			
+			.newsPic .wrap {
+				width: 1200px;
+				margin: 0 auto;
+				height: 100%;
+				position: relative;
+			}
+			
+			.newsPic .top {
+				position: absolute;
+				left: 130px;
+				top: -50px;
+				font-size: 32px;
+				font-weight: bolder;
+				color: #fff;
+				transition: all 2s ease;
+			}
+			
+			.newsPic .bottom {
+				position: absolute;
+				left: 290px;
+				bottom: -80px;
+				font-size: 32px;
+				font-weight: bolder;
+				color: #fff;
+				transition: all 2s ease;
+			}
+			
+			.newsPic:hover .top {
+				display: block;
+				left: 130px;
+				top: 80px;
+			}
+			
+			.newsPic:hover .bottom {
+				left: 290px;
+				bottom: 105px;
+			}
+			
+			.newsPic .bottom span {
+				display: block;
+				font-size: 32px;
+				line-height: 32px;
+				font-weight: bolder;
+				color: #fff;
+				margin-bottom: 10px;
+			}
+			
+			.newsPic .bottom span.small {
+				font-size: 16px;
+				line-height: 16px;
+				font-weight: bolder;
+				color: #fff;
+			}
+			
+			#boxFive .serviceType {
+				width: 1200px;
+				margin: 0 auto;
+				text-align: center;
+				height: 520px;
+				margin-bottom: 70px;
+			}
+			
+			#boxFive .serviceType li {
+				width: 250px;
+				height: 520px;
+				border-radius: 10px;
+				border: 1px solid rgba(0, 0, 0, 0.15);
+				margin: 0 20px;
+				position: relative;
+				float: left;
+			}
+			
+			#boxFive .serviceType li:hover {
+				box-shadow: 0px 2px 4px 4px rgba(0, 0, 0, 0.15);
+			}
+			
+			#boxFive .serviceType li:nth-child(1) .title,
+			#boxFive .serviceType li:nth-child(2) .title,
+			#boxFive .serviceType li:nth-child(3) .title,
+			#boxFive .serviceType li:nth-child(4) .title {
+				border-radius: 10px 10px 0 0;
+				height: 83px;
+				width: 100%;
+				background-color: #da8132;
+				border-bottom: 1px solid #ddd;
+			}
+			
+			#boxFive .serviceType li:nth-child(2) .title {
+				background-color: #32977a;
+			}
+			
+			#boxFive .serviceType li:nth-child(3) .title {
+				background-color: #0b80be;
+			}
+			
+			#boxFive .serviceType li:nth-child(4) .title {
+				background-color: #6e56a1;
+			}
+			
+			#boxFive .serviceType li:nth-child(1) .title p,
+			#boxFive .serviceType li:nth-child(2) .title p,
+			#boxFive .serviceType li:nth-child(3) .title p,
+			#boxFive .serviceType li:nth-child(4) .title p {
+				font-size: 24px;
+				font-weight: 500;
+				color: #fefefe;
+				line-height: 83px;
+			}
+			
+			#boxFive .serviceType li:nth-child(1) .body,
+			#boxFive .serviceType li:nth-child(2) .body,
+			#boxFive .serviceType li:nth-child(3) .body,
+			#boxFive .serviceType li:nth-child(4) .body {
+				height: 436px;
+				width: 100%;
+				border-radius: 0 0 10px 10px;
+				background-color: #ed9d60;
+			}
+			
+			#boxFive .serviceType li:nth-child(2) .body {
+				background-color: #3fb895;
+			}
+			
+			#boxFive .serviceType li:nth-child(3) .body {
+				background-color: #279ad9;
+			}
+			
+			#boxFive .serviceType li:nth-child(4) .body {
+				background-color: #8b76b4;
+			}
+			
+			#boxFive .serviceType li .body p {
+				font-weight: 500;
+			}
+			
+			#boxFive .serviceType li:nth-child(1) .body p.body-tp,
+			#boxFive .serviceType li:nth-child(2) .body p.body-tp {
+				font-size: 20px;
+				color: #fff;
+				line-height: 20px;
+				padding: 50px 0 50px 0;
+			}
+			
+			#boxFive .serviceType li:nth-child(3) .body p.body-top {
+				font-size: 20px;
+				color: #fff;
+				line-height: 20px;
+				padding-top: 27px;
+			}
+			
+			#boxFive .serviceType li:nth-child(3) .body .pic1 {
+				position: absolute;
+				right: 0px;
+				top: 0;
+			}
+			
+			#boxFive .serviceType li:nth-child(4) .body p.body-top {
+				font-size: 20px;
+				color: #fff;
+				line-height: 20px;
+				padding-top: 50px;
+			}
+			
+			#boxFive .serviceType li:nth-child(3) .body p.body-mid1 {
+				font-size: 20px;
+				color: #fff;
+				line-height: 20px;
+			}
+			
+			#boxFive .serviceType li:nth-child(4) .body p.body-mid1 {
+				font-size: 20px;
+				color: #fff;
+				line-height: 20px;
+				padding-top: 10px;
+				padding-bottom: 40px;
+			}
+			
+			#boxFive .serviceType li:nth-child(3) .body p.body-mid2 {
+				font-size: 20px;
+				color: #fff;
+				line-height: 20px;
+				margin-bottom: 12px;
+			}
+			
+			#boxFive .serviceType li:nth-child(4) .body p.body-mid2 {
+				font-size: 12px;
+				color: #fff;
+				line-height: 12px;
+				padding-bottom: 8px;
+			}
+			
+			#boxFive .serviceType li:nth-child(4) .body p.body-mid2 span {
+				font-size: 20px;
+				color: #fff;
+				font-weight: bolder;
+				line-height: 20px;
+			}
+			
+			#boxFive .serviceType li:nth-child(3) .body p.body-mid3 {
+				font-size: 14px;
+				color: #fff;
+				line-height: 14px;
+				margin-bottom: 0px;
+			}
+			
+			#boxFive .serviceType li:nth-child(3) .body p.tip {
+				font-size: 12px;
+				color: #fff;
+				line-height: 12px;
+			}
+			
+			#boxFive .serviceType li:nth-child(3) .body p.body-mid3 span {
+				font-size: 14px;
+				font-weight: bold;
+				text-decoration: line-through;
+			}
+			
+			#boxFive .serviceType li:nth-child(1) .body p.body-price,
+			#boxFive .serviceType li:nth-child(2) .body p.body-price,
+			#boxFive .serviceType li:nth-child(3) .body p.body-price,
+			#boxFive .serviceType li:nth-child(4) .body p.body-price {
+				font-size: 16px;
+				font-style: italic;
+				color: #fff;
+				line-height: 16px;
+				padding: 20px 0 70px 0;
+			}
+			
+			#boxFive .serviceType li:nth-child(4) .body p.body-bot {
+				font-size: 16px;
+				color: #fff;
+				line-height: 16px;
+				padding-bottom: 95px;
+			}
+			
+			#boxFive .serviceType li:nth-child(4) .body p.tip {
+				font-size: 12px;
+				color: #fff;
+				line-height: 12px;
+			}
+			
+			#boxFive .serviceType li:nth-child(3) .body p.body-price {
+				padding: 0px 0 22px 0;
+			}
+			
+			#boxFive .serviceType li:nth-child(4) .body p.body-price {
+				padding: 0px 0 8px 0;
+			}
+			
+			#boxFive .serviceType li:nth-child(1) div.body p span,
+			#boxFive .serviceType li:nth-child(2) div.body p span,
+			#boxFive .serviceType li:nth-child(3) div.body p span,
+			#boxFive .serviceType li:nth-child(4) div.body p span {
+				font-size: 40px;
+				color: #fff;
+				line-height: 40px;
+			}
+			
+			#boxFive .serviceType li:nth-child(1) .body dl,
+			#boxFive .serviceType li:nth-child(2) .body dl,
+			#boxFive .serviceType li:nth-child(3) .body dl {
+				position: absolute;
+				left: 60px;
+				top: 288px;
+				font-size: 12px;
+				color: #fff;
+				line-height: 12px;
+				padding: 32px 0 38px 0;
+			}
+			
+			#boxFive .serviceType li:nth-child(1) .body dl dt,
+			#boxFive .serviceType li:nth-child(2) .body dl dt,
+			#boxFive .serviceType li:nth-child(3) .body dl dt {
+				padding-top: 10px;
+			}
+			
+			#boxFive .serviceType li:nth-child(4) .body .btn {
+				width: 160px;
+				height: 40px;
+				margin: 0 auto;
+				box-sizing: border-box;
+				background-color: #6e56a1;
+				border-radius: 4px;
+				margin-bottom: 48px;
+			}
+			
+			#boxFive .serviceType li:nth-child(4) .body .small {
+				font-size: 12px;
+				line-height: 12px;
+			}
+			
+			#boxFive .serviceType li:nth-child(4) .body .btn:hover {
+				width: 160px;
+				height: 40px;
+				margin: 0 auto;
+				background-color: #9784bc;
+				border: 1px solid #fff;
+				margin-bottom: 48px;
+			}
+			
+			#boxFive .serviceType li:nth-child(4) .body .btn a {
+				display: inline-block;
+				color: #fff;
+				font-size: 16px;
+				line-height: 40px;
+				font-weight: bold;
+			}
+			
+			div#wrap {
+				width: 100%;
+				height: 259px;
+				background-color: #1faae2;
+			}
+			
+			#wrap .container {
+				width: 1200px;
+				margin: 0 auto;
+			}
+			
+			#wrap .container .up {
+				padding-top: 36px;
+				padding-bottom: 30px;
+				display: flex;
+				justify-content: space-between;
+				text-align: center;
+				border-bottom: 1px solid #ccc;
+			}
+			
+			#wrap .container .up p {
+				font-size: 16px;
+				color: #fff;
+				font-weight: bold;
+				line-height: 16px;
+				margin-bottom: 20px;
+			}
+			
+			#wrap .container .up ul a {
+				font-size: 12px;
+				color: #fff;
+				line-height: 22px;
+			}
+			
+			#wrap .container .up p.last {
+				text-align: left;
+			}
+			
+			#wrap .container .up .wrap-link a {
+				width: 160px;
+				display: flex;
+				justify-content: space-between;
+				font-size: 12px;
+				color: #fff;
+				line-height: 22px;
+			}
+			
+			#wrap .container .up .wrap-link {
+				margin-bottom: 10px;
+			}
+			
+			#wrap .container .up .wrap-link a li {
+				text-align: left;
+				line-height: 22px;
+			}
+			
+			#wrap .container .up .email {
+				font-size: 12px;
+				color: #fff;
+			}
+			
+			#wrap .container .down {
+				font-size: 12px;
+				height: 40px;
+				line-height: 40px;
+				color: #fff;
+				text-align: center;
+			}
+			
+			#wrap .container .left dl {
+				font-size: 16px;
+				line-height: 16px;
+				color: #fff;
+				text-align: center;
+			}
+			
+			#wrap .container .left dl dd {
+				margin-top: 10px;
+			}
+			
+			.pop {
+				width: 100%;
+				height: 100%;
+				position: fixed;
+				top: 0;
+				left: 0;
+				background: rgba(0, 0, 0, 0.5);
+				display: flex;
+				flex-direction: column;
+				justify-content: space-around;
+				display: none;
+			}
+			
+			.pop .pop-main {
+				width: 640px;
+				height: 612px;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-top: -306px;
+				margin-left: -320px;
+				background-color: #fafafb;
+				border-radius: 10px;
+			}
+			
+			.pop .pop-main .pop-title {
+				width: 100%;
+				height: 92px;
+				background-color: #1faae2;
+				padding-top: 30px;
+				padding-left: 20px;
+				padding-right: 20px;
+				border-top-left-radius: 10px;
+				border-top-right-radius: 10px;
+			}
+			
+			.pop .pop-main .pop-title #cancel {
+				cursor: pointer
+			}
+			
+			.pop .pop-main .pop-title .title-left {
+				float: left;
+			}
+			
+			.pop .pop-main .pop-title .title-right {
+				float: right;
+			}
+			
+			.pop .pop-main .pop-title .title-right>span {
+				position: absolute;
+				top: 10px;
+				right: 10px;
+				font-size: 30px;
+				color: #fff;
+			}
+			
+			.pop .pop-main .pop-title .email-name {
+				width: 100%;
+				height: 18px;
+			}
+			
+			.pop .pop-main .pop-title .email-name span {
+				display: inline-block;
+				font-size: 12px;
+				color: #fff;
+				line-height: 12px;
+				vertical-align: text-top;
+			}
+			
+			.pop .pop-main .pop-title .title-emailNum {
+				margin-top: 5px;
+				font-size: 18px;
+				color: #fff;
+				line-height: 18px;
+				vertical-align: middle;
+				text-indent: 20px;
+			}
+			
+			.pop .pop-main .pop-tip {
+				width: 100%;
+				height: 36px;
+				background-color: #79d8fe;
+				vertical-align: middle;
+				padding-left: 20px;
+				padding-top: 10px;
+			}
+			
+			.pop .pop-main .pop-tip .tips {
+				font-size: 12px;
+				color: #0b80be;
+				line-height: 12px;
+				vertical-align: text-top;
+				padding-left: 10px;
+			}
+			
+			.pop .pop-main .pop-body {
+				width: 100%;
+				height: 400px;
+				padding-top: 20px;
+				padding-left: 30px;
+			}
+			
+			.pop .pop-main .pop-body .name {
+				text-indent: 1px;
+			}
+			
+			.pop .pop-main .pop-body .tel {
+				text-indent: 1px;
+			}
+			
+			.pop .pop-main .pop-body .email {
+				text-indent: 35px;
+			}
+			
+			.pop .pop-main .pop-body label {
+				font-size: 12px;
+				color: #666;
+			}
+			
+			.pop .pop-main .pop-body .symbol {
+				color: #ff3300;
+				vertical-align: middle;
+			}
+			
+			.pop .pop-main .pop-body>div {
+				width: 100%;
+				height: 32px;
+				margin-bottom: 20px;
+			}
+			
+			.pop .pop-main .pop-body input {
+				display: inline-block;
+				box-sizing: border-box;
+				font-size: 12px;
+				line-height: 20px;
+				height: 32px;
+				border: 1px solid #ccc;
+				color: #999;
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				outline: 0;
+				padding: 5px;
+				text-decoration: none;
+				width: 300px;
+			}
+			.pop .pop-main .pop-body input:focus {
+				border: 1px solid rgb(0,143,255);
+			}
+			
+			.pop .pop-main .pop-body tr td {
+				display: inline-block;
+			}
+			
+			.pop .pop-main .pop-body tr td.Msg {
+				height: 170px;
+				vertical-align: top;
+				font-size: 12px;
+				color: #666;
+				text-indent: 38px;
+			}
+			
+			.pop .pop-main .pop-body textarea {
+				-moz-box-shadow: 1px 1px 0 #E7E7E7;
+				-moz-box-sizing: border-box;
+				border: 1px solid #ccc;
+				font-size: 12px;
+				padding: 10px;
+				outline-style: none;
+				outline-width: medium;
+				width: 460px;
+				height: 170px;
+				color: #999;
+				resize: none;
+				display: inline-block;
+				text-align: left;
+			}
+			.pop .pop-main .pop-body textarea:focus {
+			border: 1px solid rgb(0,143,255);
+				
+			}
+			
+			.pop .pop-main .btn {
+				width: 160px;
+				height: 30px;
+				margin: 0 auto;
+				margin-top: 30px;
+				background-color: #0b80be;
+				color: #fff;
+				font-size: 12px;
+				text-align: center;
+				line-height: 30px;
+				font-weight: 600;
+				border-radius: 4px;
+			}
+			
+			.pop .pop-main .btn:hover {
+				width: 160px;
+				height: 30px;
+				margin: 0 auto;
+				margin-top: 30px;
+				background-color: #1faae2;
+				font-size: 12px;
+				text-align: center;
+				line-height: 30px;
+				font-weight: 600;
+				cursor: pointer;
+				border-radius: 4px;
+			}
+			
+			#tellUs {
+				cursor: pointer;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--header-->
+		<header class="index-top clearfix">
+			<div class="min-width">
+				<span class="top-logo"></span>
+				<div class="index-nav right">
+					<a href="#index" class="selected-span"><span>首页</span></a>
+					<a href="#solution"><span>解决方案</span></a>
+					<a href="#scene"><span>使用场景</span></a>
+					<a href="#service"><span>特色服务</span></a>
+					<a href="#serviceIntro"><span>服务价格</span></a>
+				</div>
+			</div>
+
+		</header>
+		<!--header end-->
+		<!--banner-->
+		<div class="a-position" id="index"></div>
+		<div class="index-banner"></div>
+		<!--banner end-->
+		<!--担心-->
+		<div class="worry-content clearfix" id="boxOne">
+			<span class="title">做调研，您是否担心</span>
+			<div class="item left">
+				<span class="worry-img"></span>
+				<p>结果真实吗？</p>
+			</div>
+			<div class="item left">
+				<span class="worry-img"></span>
+				<p>样本有效吗?</p>
+			</div>
+			<div class="item left">
+				<span class="worry-img"></span>
+				<p>覆盖率达标吗？</p>
+			</div>
+		</div>
+		<!--担心end-->
+		<!--易得解决方案-->
+		<div class="solution-box" id="boxTwo">
+			<div class="a-position" id="solution"></div>
+			<p class="blue-title">易得解决方案</p>
+			<div class="solution-item">
+				<div class="min-width clearfix">
+					<span class="item-img solution-one left"></span>
+					<p class="left">
+						基于移动端,<br/> 依托微信与被调研对象实现强连接，
+						<br/> 调研样本将精确到每一个“
+						<span class="importent-word">真实</span>”的人，<br/> 可实现大规模调研及回访。
+					</p>
+				</div>
+
+			</div>
+			<div class="solution-item">
+				<div class="min-width clearfix">
+					<p class="left">
+						回收调研时，<br/> 允许自动回收样本提交人的当前位置和精准使用时间，
+						<br/> 避免人为干预，保证样本的
+						<span class="importent-word">真实性</span>。
+					</p>
+					<span class="item-img solution-two left"></span>
+
+				</div>
+
+			</div>
+			<div class="solution-item">
+				<div class="min-width clearfix">
+					<span class="item-img solution-three left"></span>
+					<p class="left">
+						背靠出版云平台的丰富出版资源，<br/> 调研采集结果将
+						<span class="importent-word">更加权威有效</span>。
+					</p>
+				</div>
+
+			</div>
+			<div class="solution-item">
+				<div class="min-width clearfix">
+					<p class="left">
+						由专业出版人员参与和委托的调研，<br/> 面向更精准的细分对象，
+						<br/> 将筛选出更有效的
+						<span class="importent-word">专业样本</span>。
+					</p>
+					<span class="item-img solution-four left"></span>
+
+				</div>
+			</div>
+			<div class="solution-item">
+				<div class="min-width clearfix">
+					<span class="item-img solution-five left"></span>
+					<p class="left">
+						更加丰富的出版行业资源，<br/> 将您的调研样本覆盖更广泛的地域，
+						<br/> 使您的调研结果
+						<span class="importent-word">更具说服力</span>。
+					</p>
+				</div>
+
+			</div>
+		</div>
+		<!--易得解决方案 end-->
+		<!--易得使用场景-->
+		<div id="boxThree">
+			<div class="a-position" id="scene"></div>
+			<p class="blue-title">易得使用场景</p>
+			<div class="min-width sight-show">
+				<h4 class="light-blue-title">调研问卷场景</h4>
+				<div class="sight-box clearfix">
+					<span class="sight-item left">
+                <i class="survey-img survey-one"></i>
+                <p>通过易得小程序<br/>
+                    创建问卷</p>
+            </span>
+
+					<span class="sight-item left">
+                <i class="survey-img survey-two"></i>
+                <p>下载问卷二维码或者<br/>
+                    直接在小程序将问卷<br/>
+                    分发给目标调研对象</p>
+            </span>
+					<span class="sight-item left">
+                <i class="survey-img survey-three"></i>
+                <p>被调研对象进入<br/>
+                    问卷页答题</p>
+            </span>
+					<span class="sight-item left">
+                <i class="survey-img survey-four"></i>
+                <p>查看、下载调研成果</p>
+            </span>
+					<span class="sight-item left">
+                <i class="survey-img survey-five"></i>
+                <p>创建问卷者人脉不够<br/>
+                    发布委托任务</p>
+            </span>
+					<span class="sight-item left">
+                <i class="survey-img survey-six"></i>
+                <p>对调研目标更有影响力的<br/>
+                    渠道编辑接收任务</p>
+            </span>
+
+					<div class="line-circle">
+						<span class="icon-line color-b0eaf0"></span>
+						<span class="icon-circle color-b0eaf0"></span>
+					</div>
+					<div class="line-circle">
+						<span class="icon-line color-b0eaf0"></span>
+						<span class="icon-circle color-b0eaf0"></span>
+					</div>
+					<div class="line-circle">
+						<span class="icon-line color-b0eaf0"></span>
+						<span class="icon-circle color-b0eaf0"></span>
+					</div>
+					<div class="line-circle">
+						<span class="icon-line color-b0eaf0"></span>
+						<span class="icon-circle color-b0eaf0"></span>
+					</div>
+					<div class="line-circle">
+						<span class="icon-line color-b0eaf0"></span>
+						<span class="icon-circle color-b0eaf0"></span>
+					</div>
+					<div class="line-circle">
+						<span class="icon-line color-b0eaf0"></span>
+						<span class="icon-circle color-b0eaf0"></span>
+					</div>
+				</div>
+			</div>
+			<div class="min-width sight-show">
+				<h4 class="light-blue-title">数据采集场景</h4>
+				<div class="data-box clearfix">
+					<span class="sight-item-data left">
+                <i class="data-img data-one"></i>
+                <p>通过易得小程序<br/>
+                    创建问卷</p>
+            </span>
+					<span class="sight-item-data left">
+                <i class="data-img data-two"></i>
+                <p>发布采集任务<br/>
+                    设置任务接收人条件<br/>
+                    如：地区、行业等
+                    </p>
+            </span>
+					<span class="sight-item-data left">
+                <i class="data-img data-three"></i>
+                <p>易得发送微信消息给<br/>
+                    符合条件的采集编辑
+                </p>
+            </span>
+					<span class="sight-item-data left">
+                <i class="data-img data-four"></i>
+                <p>采集编辑接收采集任务
+                    <br/>
+                    采集到高可信数据源
+                </p>
+            </span>
+					<span class="sight-item-data left">
+                <i class="data-img data-five"></i>
+                <p>查看、下载采集成果
+                    <br/>
+                    </p>
+            </span>
+					<div class="line-circle">
+						<span class="icon-line color-1faae2"></span>
+						<span class="icon-circle color-1faae2"></span>
+					</div>
+					<div class="line-circle">
+						<span class="icon-line color-1faae2"></span>
+						<span class="icon-circle color-1faae2"></span>
+					</div>
+					<div class="line-circle">
+						<span class="icon-line color-1faae2"></span>
+						<span class="icon-circle color-1faae2"></span>
+					</div>
+					<div class="line-circle">
+						<span class="icon-line color-1faae2"></span>
+						<span class="icon-circle color-1faae2"></span>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<!--易得使用场景 end-->
+		<!--易得特色服务-->
+		<div id="boxFour">
+			<div class="a-position" id="service"></div>
+			<p class="blue-title">易得特色服务</p>
+			<div class="min-width">
+				<ul class="service-list clearfix">
+					<li>
+						<div class="service-item">
+							<span class="service-img"></span>
+							<p class="service-word">精准调研委托</p>
+						</div>
+
+					</li>
+					<li>
+						<div class="service-item">
+							<span class="service-img"></span>
+							<p class="service-word">专业数据采集</p>
+						</div>
+
+					</li>
+					<li>
+						<div class="service-item">
+							<span class="service-img"></span>
+							<p class="service-word">样本专业识别</p>
+						</div>
+					</li>
+					<li>
+						<div class="service-item">
+							<span class="service-img"></span>
+							<p class="service-word">调研成果检索</p>
+						</div>
+					</li>
+					<li>
+						<div class="service-item">
+							<span class="service-img"></span>
+							<p class="service-word">调研跟踪回访</p>
+						</div>
+					</li>
+					<li>
+						<div class="service-item">
+							<span class="service-img"></span>
+							<p class="service-word">知识分享收益获取</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--易得特色服务end-->
+		<!--易得服务介绍-->
+		<div id="boxFive">
+			<div class="a-position" id="serviceIntro"></div>
+			<p class="blue-title">易得服务价格</p>
+			<p class="write-title">服务流程</p>
+			<ul class="sevrceMode">
+				<li>
+					<dl>
+						<dd><img src="./images/service.png" alt=""></dd><dt>选择服务类型</dt></dl>
+				</li>
+				<li><span><</span></li>
+				<li>
+					<dl>
+						<dd><img src="./images/saoMa.png" alt=""></dd><dt>扫描二维码</dt></dl>
+				</li>
+				<li><span><</span></li>
+				<li>
+					<dl>
+						<dd><img src="./images/buy.png" alt=""></dd><dt>购买服务</dt></dl>
+				</li>
+				<li><span><</span></li>
+				<li>
+					<dl>
+						<dd><img src="./images/email.png" alt=""></dd><dt>填写邮箱</dt></dl>
+				</li>
+				<li><span><</span></li>
+				<li>
+					<dl>
+						<dd><img src="./images/write.png" alt=""></dd><dt>接收回执邮件</dt></dl>
+				</li>
+				<li><span><</span></li>
+				<li>
+					<dl>
+						<dd><img src="./images/word.png" alt=""></dd><dt>邮件发送调研Word文档</dt></dl>
+				</li>
+				<li><span><</span></li>
+				<li>
+					<dl>
+						<dd><img src="./images/report.png" alt=""></dd><dt>接收调研报告</dt></dl>
+				</li>
+			</ul>
+			<div class="newsPic">
+				<div class="container">
+					<div class="wrap">
+						<div class="top">
+							<span>易得调研</span>
+						</div>
+						<div class="bottom">
+							<span>面向知识工作者的数据采集服务平台</span>
+							<span class="small"> 精准海量资源 基于大数据互助托管调研服务 让知识及人脉分享创造价值 </span>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<p class="write-title">多种服务，满足您的个性需求</p>
+			<ul class="serviceType">
+				<li>
+					<div class="title">
+						<p>服务一</p>
+					</div>
+					<div class="body">
+						<p class="body-tp">自主调研服务</p>
+						<p class="body-price">价格：<span>300</span>元/次</p>
+						<dl class="pic">
+							<dd> <img src="./images/S1.png" alt=""></dd>
+							<dt><span>微信扫码使用服务</span></dt>
+						</dl>
+					</div>
+				</li>
+				<li>
+					<div class="title">
+						<p>服务二</p>
+					</div>
+					<div class="body">
+						<p class="body-tp">精准二次跟踪调研服务</p>
+						<p class="body-price">价格：<span>900</span>元/次</p>
+						<dl class="pic">
+							<dd> <img src="./images/S2.png" alt=""></dd>
+							<dt><span>微信扫码使用服务</span></dt>
+						</dl>
+					</div>
+				</li>
+				<li>
+					<div class="title">
+						<p>服务三</p>
+					</div>
+					<div class="body">
+						<div class="pic1"><img src="./images/small.png" alt=""></div>
+						<p class="body-top">自主调研服务</p>
+						<p class="body-mid1">+</p>
+						<p class="body-mid2">精准二次跟踪调研服务</p>
+						<p class="body-mid3">价格：<span>900元+300元=1200元</span></p>
+						<p class="body-price">优惠价格：<span>900</span>元/次</p>
+						<p class="tip">* 与服务二同等价格获取组合调研报告</p>
+						<dl class="pic">
+							<dd> <img src="./images/S3.png" alt=""></dd>
+							<dt><span>微信扫码使用服务</span></dt>
+						</dl>
+					</div>
+				</li>
+				<li>
+					<div class="title">
+						<p>服务四</p>
+					</div>
+					<div class="body">
+						<p class="body-top">委托调研服务</p>
+						<p class="body-mid1">定制化服务</p>
+						<p class="body-price">价格：<span>900</span>元<span class="small">(基础服务费用)</span></p>
+						<p class="body-bot">+ 浮动价格</p>
+						<div class="btn">
+							<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=c30178efb3f55332485d901b23f4dc52d0d99a6d6fbae238f39090192abb43aa">
+								<span>详情咨询</span>
+							</a>
+						</div>
+						<p class="tip">* 浮动价格视样本量而定，详询客服</p>
+
+					</div>
+				</li>
+			</ul>
+
+		</div>
+
+		<!--footer-->
+		<div id="wrap">
+			<div class="container">
+				<div class="up">
+					<div class="left">
+						<img src="./images/reverseWhite_logo.png" alt="">
+					</div>
+					<div class="left">
+						<p>产品</p>
+						<ul id="link_here">
+							<li>
+								<a href="#solution"><span>解决方案</span></a>
+							</li>
+							<li>
+								<a href="#scene"><span>使用场景</span></a>
+							</li>
+							<li>
+								<a href="#service"><span>特色服务</span></a>
+							</li>
+							<li>
+								<a href="#serviceIntro"><span>服务价格</span></a>
+							</li>
+						</ul>
+					</div>
+					<div class="left">
+						<p>关于我们</p>
+						<ul>
+							<li>
+								<a href="#"><span>关于我们</span></a>
+							</li>
+							<li>
+								<a href="#"><span>加入我们</span></a>
+							</li>
+							<li>
+								<a href="#"><span>合作伙伴</span></a>
+							</li>
+						</ul>
+					</div>
+					<div class="left">
+						<p class="last" id="tellUs">联系我们</p>
+						<div class="wrap-link">
+							<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=c30178efb3f55332485d901b23f4dc52d0d99a6d6fbae238f39090192abb43aa">
+								<div class="link-left">
+									<img src="./images/QQ.png" alt="">
+								</div>
+								<div class="link-right">
+									<ul>
+										<li>全方位的购买咨询</li>
+										<li>精准的配置推荐</li>
+										<li>灵活的价格方案</li>
+										<li>1对1贴心服务</li>
+									</ul>
+								</div>
+							</a>
+						</div>
+						<div class="email">
+							<span>客服邮箱：yide-survey@foxmail.com</span>
+						</div>
+					</div>
+					<div class="left">
+						<dl>
+							<dt><img src="./images/guanzhu.jpg" alt=""></dt>
+							<dd><span>扫码关注微信</span></dd>
+						</dl>
+					</div>
+				</div>
+				<div class="down">
+					Copyright © 2011-2017 All rights reserved
+				</div>
+			</div>
+		</div>
+		<!--/footer-->
+		<a class="back-top" href="#index" id="back-top"></a>
+		<!--弹窗-->
+		<div class="pop" id="pop">
+			<div class="pop-main">
+				<div class="pop-title">
+					<div class="title-left">
+						<div class="email-name">
+							<img src="images/pop_email.png" alt="">
+							<span>邮件咨询：</span>
+						</div>
+						<div class="title-emailNum" id="title_emailNum">yide-survey@foxmail.com</div>
+					</div>
+					<div class="title-right">
+						<span id="cancel">&times;</span>
+					</div>
+				</div>
+				<div class="pop-tip">
+					<img src="images/pop_time.png" alt=""><span class="tips">也可填写下方资料，我们将在24小时之内跟您联系。</span>
+				</div>
+				<div class="pop-body">
+					<div class="name"><span class="symbol">*&nbsp;</span><label for="name">您的姓名：</label><input id="name" type="text" placeholder="请输入真实姓名"></div>
+					<div class="pressName" id="pressName"><label for="press">出版社名字：</label><input class="press" id="press" type="text"></div>
+					<div class="tel"><span class="symbol">*&nbsp;</span><label for="tel">联系电话：</label><input id="tel" type="tel"></div>
+					<div class="email"><label for="email">邮箱：</label><input id="email" type="email">
+					</div>
+					<div class="giveYouMsg">
+						<table>
+							<tr>
+								<td class="Msg" id="Msg">留言：</td>
+								<td><textarea name="" id="textArea" cols="30" rows="10"> 留下您想说的话或者提出您的宝贵建议。</textarea></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<div class="btn" id="btn"> 确定</div>
+			</div>
+		</div>
+		<!--/弹窗-->
+		<script>
+			
+			var changSelect = function(n) {
+				var indexNav = document.querySelector(".index-nav");
+				var indexNavItem = indexNav.getElementsByTagName("a");
+				for(var i = 0; i < indexNavItem.length; i++) {
+					// indexNavItem[i].className = "";
+					// indexNavItem[n].className = "selected-span";
+					indexNavItem[i].onclick = function() {
+						for(var j = 0; j < indexNavItem.length; j++) {
+							indexNavItem[j].className = "";
+						}
+						this.className = "selected-span";
+						//console.log(this)
+					}
+				}
+			}
+
+			var backTopShow = function() {
+				var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+				var ifHeight = scrollTop - window.innerHeight;
+				var backTop = document.getElementById("back-top");
+				var boxOne = document.getElementById("boxOne");
+				var boxTwo = document.getElementById("boxTwo");
+				var boxThree = document.getElementById("boxThree");
+				var boxFour = document.getElementById("boxFour");
+				if(ifHeight > 0) {
+					backTop.style.display = "block"
+				} else {
+					backTop.style.display = "none"
+				};
+				if(scrollTop < boxTwo.offsetTop) {
+					changSelect(0);
+				} else if(scrollTop >= boxTwo.offsetTop && scrollTop < boxThree.offsetTop) {
+					changSelect(1);
+				} else if(scrollTop >= boxThree.offsetTop && scrollTop < boxFour.offsetTop) {
+					changSelect(2);
+				} else if(scrollTop >= boxFour.offsetTop) {
+					changSelect(3);
+				}
+			}
+			changSelect(0);
+			window.onscroll = function() {
+				backTopShow()
+			}
+			var tellUs_pop = document.getElementById("tellUs");
+			var pop = document.getElementById("pop");
+			tellUs_pop.addEventListener("click", function() {
+				pop.style.display = "block";
+				var inputs = document.querySelectorAll("input");
+				if(inputs.length > 0) {
+					for(i = 0; i < inputs.length; i++) {
+						var Input = inputs[i];
+						if(Input.type != "hidden" && Input.value.length > 0) {
+							Input.blur();
+							this.style.border="1px solid blue";
+							return;
+						} else if(Input.type != "hidden") {
+							Input.focus();
+							return
+						}
+					}
+				}
+				
+
+					for(i = 0; i < inputs.length; i++) {
+						var Input = inputs[i];
+						Input.addEventListener("keydown",function(){
+							this.style.borderColor="rgb(0,143,255)";
+						});
+					}
+
+			});
+			var msg = document.getElementById("Msg");
+   			var pressName = document.getElementById("pressName");
+   			if(window.navigator.userAgent.indexOf("Chrome") !== -1 ){
+   				msg.style.textIndent="36px";
+   			}
+			else if(navigator.userAgent.indexOf("Firefox")>0){  
+        	 msg.style.textIndent="31px";
+        	 pressName.textIndent="-1px";
+   			} else if(!window.ActiveXObject || "ActiveXObject" in window){
+   				msg.style.textIndent="31px";
+   			}
+
+   			
+			var cancel = document.getElementById("cancel");
+			cancel.addEventListener("click", function() {
+				pop.style.display = "none";
+			});
+			var btn = document.getElementById('btn');
+			btn.addEventListener("click", function() {
+				var name = document.getElementById("name").value;
+				var press = document.getElementById("press").value;
+				var tel = document.getElementById("tel").value;
+				var email = document.getElementById("email").value;
+				var message = document.getElementById("textArea").value;
+				if(name != "" && tel != "") {
+					pop.style.display = "none";
+					//发送请求
+					$.ajax({
+					    url: "../email/SendMail.ashx?Method=SendQQ",
+						typ:"GET",
+						contentType: "application/json; charset=utf-8",
+						data:{name:name,space:press,tel:tel,mail:email,message:message},
+						dataType:"json",
+						success:function(data){
+						}
+					});
+				}
+
+			});
+			var textArea = document.getElementById("textArea");
+			textArea.addEventListener("focus", function() {
+				if(textArea.value == " 留下您想说的话或者提出您的宝贵建议。") {
+					textArea.value = "";
+				}else if(textArea.value == "") {
+					textArea.value= " 留下您想说的话或者提出您的宝贵建议。"
+					}
+			});
+			textArea.addEventListener("keyup", function() {
+					if(textArea.value == "") {
+					textArea.value= " 留下您想说的话或者提出您的宝贵建议。"
+					}
+			});
+		</script>
+		<script>
+			//谷歌
+			(function(i, s, o, g, r, a, m) {
+				i['GoogleAnalyticsObject'] = r;
+				i[r] = i[r] || function() {
+					(i[r].q = i[r].q || []).push(arguments)
+				}, i[r].l = 1 * new Date();
+				a = s.createElement(o),
+					m = s.getElementsByTagName(o)[0];
+				a.async = 1;
+				a.src = g;
+				m.parentNode.insertBefore(a, m)
+			})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+			ga('create', 'UA-93816612-1', 'auto');
+			ga('send', 'pageview');
+			//百度
+			var _hmt = _hmt || [];
+			(function() {
+				var hm = document.createElement("script");
+				hm.src = "https://hm.baidu.com/hm.js?a9e0b846a66409482c03fd75ae6aba15";
+				var s = document.getElementsByTagName("script")[0];
+				s.parentNode.insertBefore(hm, s);
+			})();
+			var linkToHere = function(n) {
+				var indexNav = document.querySelector(".index-nav");
+				var indexNavItem = indexNav.getElementsByTagName("a");
+				var link = document.getElementById("link_here");
+				var links = link.getElementsByTagName("a");
+				for(var i = 0; i < links.length; i++) {
+					console.log(links[3]);
+					links[i].index = i;
+					links[i].onclick = function() {
+						for(var j = 0; j < indexNavItem.length; j++) {
+							indexNavItem[j].className = "";
+						}
+						indexNavItem[this.index + 1].className = "selected-span";
+						// console.log(this.index);
+					}
+				}
+			}
+			linkToHere(0);
+		</script>
+	</body>
+
+</html>

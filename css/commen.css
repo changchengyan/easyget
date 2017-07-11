@@ -1,0 +1,132 @@
+body
+{
+  font-family:'微软雅黑',Arial, Helvetica, sans-serif;
+  margin:0px; padding:0px;
+  background-color:#fff;
+  min-height:100%;
+  box-sizing: border-box;
+  color: #333;
+}
+
+*
+{
+  table-layout:fixed; word-break: break-all; font-family:'微软雅黑',Arial, Helvetica, sans-serif;
+  box-sizing:border-box; font-size:14px; line-height:18px;
+
+}
+.hidden{ display:none;}
+
+img{
+  border:0 none;
+  vertical-align:top;
+}
+em{
+  font-style:normal;
+}
+button::-moz-focus-inner{
+  padding:0;
+  border:none;
+}
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.clearfix:after {
+  display: block;
+  content:".";
+  height: 0;
+  visibility: hidden;
+  clear: both;
+  font-size: 0;
+  line-height: 0;
+}
+.clearfix{
+  overflow: hidden;
+}
+.clearfix{
+  *zoom:1;
+}
+div {
+  box-sizing: border-box;
+}
+/* reset css */
+div, span, h1, h2, h3, h4, p, pre,
+abbr, address, cite, code, em, img,
+ins, q, samp, strong, sub, sup, b, i,
+dl, dt, dd, ol, ul, li, form, label,
+table, tr, th, td, article, aside,
+canvas, details, figcaption, figure,
+footer, header, nav, section, time {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+input, select {
+  vertical-align: middle;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #000
+}
+
+button, img {
+  border: none;
+  background-color: transparent;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.a-line {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+a {
+  text-decoration:none;
+}
+a:link {
+  color: #333;
+}
+a:visited {
+  color: #333;
+}
+a:hover {
+  color: #333;
+}
+a:active  {
+  color: #333;
+}
